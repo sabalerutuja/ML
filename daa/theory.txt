@@ -1,0 +1,278 @@
+# Practical 1: Fibonacci Series
+
+### 1. Aim
+
+To write recursive and non-recursive programs to calculate Fibonacci numbers and analyse their time and space complexity.
+
+### 2. Objectives
+
+1. To understand the Fibonacci series.
+2. To implement Fibonacci using recursion and iteration.
+3. To compare the time and space complexity of both methods.
+
+### 3. Theory
+
+The Fibonacci series is a sequence in which each number is the sum of the previous two numbers. It starts with 0 and 1.
+
+Example: 0, 1, 1, 2, 3, 5, 8, 13.
+
+**Recursive Method:** In this method, a function calls itself to calculate the Fibonacci number. It uses a base condition to stop recursion.
+
+**Non-Recursive Method:** In this method, a loop is used to generate the Fibonacci series by adding the previous two numbers.
+
+**Time Complexity:**
+
+* Recursive: O(2ⁿ)
+* Non-recursive: O(n)
+
+**Space Complexity:**
+
+* Recursive: O(n)
+* Non-recursive: O(1)
+
+### 4. Algorithm / Procedure
+
+1. Start the program.
+2. Accept the number of terms from the user.
+3. Initialize the first two numbers as 0 and 1.
+4. Use a loop to generate the Fibonacci series.
+5. Define a recursive function.
+6. Check the base condition: if n is 0 or 1, return n.
+7. Otherwise, return fibonacci(n-1) + fibonacci(n-2).
+8. Display the Fibonacci series using both methods.
+9. Stop.
+
+### 5. Result
+
+The recursive and non-recursive programs were implemented successfully to generate the Fibonacci series.
+
+### 6. Conclusion
+
+Thus, the Fibonacci series was generated using both recursion and iteration, and their time and space complexities were studied.
+
+---
+
+# Practical 2: Huffman Encoding
+
+### 1. Aim
+
+To write a program to implement Huffman Encoding using a Greedy Strategy.
+
+### 2. Objectives
+
+1. To understand the concept of Huffman Encoding.
+2. To construct a Huffman Tree using character frequencies.
+3. To generate binary codes for characters.
+4. To understand data compression.
+
+### 3. Theory
+
+Huffman Encoding is a lossless data compression technique. It assigns binary codes to characters according to their frequencies.
+
+Characters with higher frequencies get shorter codes, while characters with lower frequencies get longer codes.
+
+It uses the **Greedy Strategy**, which selects the two nodes having the smallest frequencies and combines them into a new node.
+
+This process continues until only one node remains, which becomes the root of the Huffman Tree.
+
+* Left branch = 0
+* Right branch = 1
+
+A priority queue or min-heap is used to select the nodes with the smallest frequencies.
+
+### 4. Algorithm / Procedure
+
+1. Start the program.
+2. Import the `heapq` module.
+3. Create a Node class to store character, frequency, left child and right child.
+4. Store characters and their frequencies.
+5. Insert all nodes into a priority queue.
+6. Remove the two nodes with the smallest frequencies.
+7. Combine them into a new node.
+8. Insert the new node into the priority queue.
+9. Repeat until only one node remains.
+10. Traverse the Huffman Tree to generate binary codes.
+11. Assign 0 to the left branch and 1 to the right branch.
+12. Display the Huffman codes and encoded length.
+13. Stop.
+
+### 5. Result
+
+Huffman codes were generated successfully using the Greedy Strategy, and the encoded message length was calculated.
+
+### 6. Conclusion
+
+Thus, Huffman Encoding was implemented successfully using the Greedy Strategy for lossless data compression.
+
+---
+
+# Practical 3: Fractional Knapsack
+
+### 1. Aim
+
+To write a program to solve the Fractional Knapsack problem using a Greedy Method.
+
+### 2. Objectives
+
+1. To understand the Fractional Knapsack problem.
+2. To calculate the value-to-weight ratio of each item.
+3. To maximize the total value within the given capacity.
+4. To implement the Greedy Method.
+
+### 3. Theory
+
+The Knapsack problem is an optimization problem in which a bag has a limited capacity. Each item has a weight and a value.
+
+The objective is to select items to get maximum value without exceeding the bag's capacity.
+
+In Fractional Knapsack, we can take a complete item or a fraction of an item.
+
+The Greedy Method is used to select items according to their value-to-weight ratio.
+
+**Formula:**
+
+Value-to-weight ratio = Value / Weight
+
+Items are arranged in descending order of their ratios. Items with higher ratios are selected first.
+
+### 4. Algorithm / Procedure
+
+1. Start the program.
+2. Accept the number of items, their values, weights and knapsack capacity.
+3. Calculate the value-to-weight ratio of each item.
+4. Sort the items in descending order of their ratios.
+5. Initialize the total value to zero.
+6. Select items according to their ratios.
+7. If the complete item fits, add its full value.
+8. Otherwise, select the fraction that fits in the remaining capacity.
+9. Calculate the maximum total value.
+10. Display the result.
+11. Stop.
+
+### 5. Result
+
+The Fractional Knapsack problem was solved successfully using the Greedy Method, and the maximum total value was obtained.
+
+### 6. Conclusion
+
+Thus, the Fractional Knapsack problem was implemented successfully by selecting items according to their value-to-weight ratios.
+
+---
+
+# Practical 4: 0-1 Knapsack
+
+### 1. Aim
+
+To write a program to solve the 0-1 Knapsack problem using Dynamic Programming.
+
+### 2. Objectives
+
+1. To understand the 0-1 Knapsack problem.
+2. To implement Dynamic Programming.
+3. To create and use a DP table.
+4. To find the maximum value within the given capacity.
+
+### 3. Theory
+
+The 0-1 Knapsack problem is an optimization problem in which each item has a weight and a value, and the bag has a fixed capacity.
+
+Each item has only two choices:
+
+* 0: Do not select the item.
+* 1: Select the complete item.
+
+We cannot take a fraction of an item.
+
+**Dynamic Programming** is a technique that divides a problem into smaller subproblems and stores their results in a table.
+
+For each item, two choices are considered:
+
+1. Include the item.
+2. Exclude the item.
+
+The maximum value between these two choices is stored in the DP table.
+
+**Time Complexity:** O(n × W)
+
+**Space Complexity:** O(n × W)
+
+Where n is the number of items and W is the knapsack capacity.
+
+### 4. Algorithm / Procedure
+
+1. Start the program.
+2. Accept the number of items, values, weights and capacity.
+3. Create a DP table of size (n+1) × (W+1).
+4. Initialize all table entries with zero.
+5. Consider each item using the outer loop.
+6. Consider each capacity using the inner loop.
+7. Check whether the item's weight fits in the current capacity.
+8. If it fits, calculate the value by including and excluding the item.
+9. Store the maximum of both values.
+10. If it does not fit, copy the value from the previous row.
+11. Display the maximum value stored in the DP table.
+12. Stop.
+
+### 5. Result
+
+The 0-1 Knapsack problem was solved successfully using Dynamic Programming, and the maximum value was obtained.
+
+### 6. Conclusion
+
+Thus, the 0-1 Knapsack problem was implemented successfully using Dynamic Programming by comparing the include and exclude choices for each item.
+
+---
+
+# Practical 5: N-Queens Problem
+
+### 1. Aim
+
+To design an N-Queens matrix with the first Queen already placed and use Backtracking to place the remaining Queens to generate the final N-Queens matrix.
+
+### 2. Objectives
+
+1. To understand the N-Queens problem.
+2. To check safe positions for placing Queens.
+3. To implement the Backtracking technique.
+4. To find valid arrangements of Queens on a chessboard.
+
+### 3. Theory
+
+The N-Queens problem is a chessboard problem in which N Queens must be placed on an N × N chessboard so that no two Queens attack each other.
+
+The following conditions must be satisfied:
+
+1. No two Queens should be in the same row.
+2. No two Queens should be in the same column.
+3. No two Queens should be in the same diagonal.
+
+**Backtracking** is a problem-solving technique in which a possible solution is tried. If it does not work, the program goes back and tries another solution.
+
+The `isSafe()` function checks whether a position is safe for placing a Queen.
+
+The `solve()` function places the remaining Queens row by row. If a position does not lead to a solution, the Queen is removed and another position is checked.
+
+### 4. Algorithm / Procedure
+
+1. Start the program.
+2. Accept the size N of the chessboard.
+3. Create an N × N chessboard.
+4. Initialize all positions as empty.
+5. Accept the row and column of the first Queen.
+6. Place the first Queen on the board.
+7. Check possible positions using the `isSafe()` function.
+8. Check the column and both diagonal directions.
+9. If the position is safe, place the Queen.
+10. Call the `solve()` function for the next row.
+11. If no valid position is available, remove the previously placed Queen.
+12. Try another position using Backtracking.
+13. Display the valid solution or solutions.
+14. Stop.
+
+### 5. Result
+
+The N-Queens problem was implemented successfully using Backtracking, and the program displayed valid arrangements for the given first Queen position, if any.
+
+### 6. Conclusion
+
+Thus, the N-Queens problem was solved successfully using Backtracking by checking safe positions and undoing choices that did not lead to a valid solution.
